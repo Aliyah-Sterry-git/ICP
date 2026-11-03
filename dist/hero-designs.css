@@ -19,3 +19,35 @@ html[data-hero-art="original"] .title .hero-new{display:none}
 @media(min-width:1500px){.title .hero-new{width:108%;margin-left:-4%}.title:after{width:108%;left:-4%}}
 @media(min-width:851px){.hero-copy{transform:translateX(28px)}}
 @media(max-width:650px){.hero-design-lab{right:14px;bottom:14px}.hero-dev-panel{padding:20px}}
+
+/* A single buoyant entrance, followed by the paper dot landing. */
+.title .hero-new-art{position:relative;display:block;transform-origin:50% 85%;animation:hero-inflate 1050ms both}
+.title .hero-new-art .hero-new{width:100%;margin:0;clip-path:polygon(26% 0,100% 0,100% 100%,0 100%,0 44%,26% 44%)}
+.title .hero-new-paper{position:absolute;inset:0;width:100%;height:auto;margin:0;clip-path:polygon(0 0,26% 0,26% 44%,0 44%);transform:none;transform-origin:15% 25%;animation:hero-paper-land 650ms 850ms both}
+html[data-hero-art="original"] .hero-new-art{display:none}
+.title .hero-original{animation:hero-inflate 1050ms both;transform-origin:50% 85%}
+.title .hero-original .paper-dot{transform-origin:12% 15%;animation:hero-original-paper-land 650ms 850ms both}
+@keyframes hero-inflate{
+0%{opacity:0;transform:translateY(55px) scale(.92,1.04)}
+22%{opacity:1}
+48%{transform:translateY(-20px) scale(.98,1.035)}
+70%{transform:translateY(6px) scale(1.025,.975)}
+86%{transform:translateY(-5px) scale(.995,1.01)}
+100%{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes hero-paper-land{
+0%{opacity:0;transform:translate(2%,-20%) rotate(-16deg)}
+20%{opacity:1}
+64%{transform:translateY(1.3%) rotate(5deg) scale(1.02,.98)}
+82%{transform:translateY(-1.5%) rotate(-2deg)}
+100%{opacity:1;transform:none}
+}
+@keyframes hero-original-paper-land{
+0%{opacity:0;transform:translate(2%,-27%) rotate(-16deg)}
+20%{opacity:1}
+64%{transform:translateY(-5.7%) rotate(5deg)}
+82%{transform:translateY(-8.5%) rotate(-2deg)}
+100%{opacity:1;transform:translateY(-7%)}
+}
+@media(min-width:1500px){.title .hero-new-art{width:108%;margin-left:-4%}}
+@media(prefers-reduced-motion:reduce){.title .hero-new-art,.title .hero-original,.title .hero-new-paper,.title .hero-original .paper-dot{animation:none}}
