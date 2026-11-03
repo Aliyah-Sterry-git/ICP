@@ -1,4 +1,4 @@
-body{background:radial-gradient(ellipse at 13% 60%,#ffe1f35c 0%,#ffe1f300 58%),radial-gradient(ellipse at 55% 40%,#e9dbff4d 0%,#e9dbff00 60%),linear-gradient(110deg,#fff0f8 0%,#f8efff 43%,#e0f1ff 100%);background-attachment:fixed}
+body{background:linear-gradient(110deg,#fff5fb 0%,#fdfaff 46%,#eaf6ff 100%);background-attachment:fixed}
 .navbar{background:#ffffffc9;box-shadow:0 15px 40px #a474c215}
 .title{position:relative;isolation:isolate}
 .title:before{content:'';position:absolute;z-index:-2;pointer-events:none;left:5%;bottom:-3%;width:89%;height:13%;border-radius:50%;background:radial-gradient(ellipse,#a18acc33 0%,#bba0da17 35%,transparent 72%);filter:blur(10px)}
