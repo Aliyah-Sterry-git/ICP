@@ -1,7 +1,7 @@
 (() => {
   const key = 'icp-module-title-style';
   let selected = 'saucer';
-  try { const saved = localStorage.getItem(key); if (['saucer', 'cursive'].includes(saved)) selected = saved; } catch {}
+  try { const saved = localStorage.getItem(key); if (['saucer', 'cursive', 'signature', 'editorial', 'rounded'].includes(saved)) selected = saved; } catch {}
   document.documentElement.dataset.titleStyle = selected;
   function init() {
     const toggle = document.querySelector('#dev-toggle');
