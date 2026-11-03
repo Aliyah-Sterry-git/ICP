@@ -3,14 +3,12 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.join(__dirname, 'dist');
 http.createServer((req, res) => {
-  const pathname = new URL(req.url, 'http://localhost').pathname;
-  if (pathname === '/assets/icp-glossy.png') {
-    res.writeHead(200, { 'Content-Type': 'image/png' });
-    fs.createReadStream(path.join(root, 'assets', 'icp-glossy.png')).pipe(res); return;
-  }
-  if (pathname !== '/' && pathname !== '/index.html') {
+  const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
+  const target = path.resolve(root, '.' + (pathname === '/' ? '/index.html' : pathname));
+  if (!target.startsWith(root + path.sep) || !fs.existsSync(target) || !fs.statSync(target).isFile()) {
     res.writeHead(404); res.end('Not found'); return;
   }
-  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-  fs.createReadStream(path.join(root, 'index.html')).pipe(res);
+  const mime = target.endsWith('.png') ? 'image/png' : 'text/html; charset=utf-8';
+  res.writeHead(200, { 'Content-Type': mime });
+  fs.createReadStream(target).pipe(res);
 }).listen(4173, '127.0.0.1', () => console.log('Local: http://127.0.0.1:4173'));
