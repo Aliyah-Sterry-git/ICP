@@ -15,23 +15,24 @@ body.paper-dialog-open{overflow:hidden}
 .paper-dialog{position:fixed;inset:0;width:min(510px,calc(100vw - 44px),calc(78svh * .74));max-width:none;max-height:none;overflow:visible;margin:auto;padding:0;border:0;background:transparent;color:#443c46;box-shadow:none}
 .paper-dialog::backdrop{background:#63516c2b;backdrop-filter:blur(5px);animation:paper-backdrop-in 350ms both}
 .paper-dialog.is-closing::backdrop{animation:paper-backdrop-out 650ms both}
-.paper-sheet{position:relative;width:100%;aspect-ratio:.74;transform-origin:0 0;filter:drop-shadow(0 18px 35px #49395824)}
+.paper-sheet{position:relative;width:100%;aspect-ratio:.74;transform-origin:0 0;filter:drop-shadow(0 18px 35px #49395824);container-type:inline-size}
 .paper-dialog .paper-frame{filter:none}
 .paper-close{position:absolute;z-index:3;right:-9px;top:-48px;display:grid;place-items:center;width:40px;height:40px;border:1px solid #e4d9e9;border-radius:50%;background:#fffafef0;color:#7a6086;font-size:23px;line-height:1;box-shadow:0 3px 12px #5640630d}
 .paper-close:hover{background:#f1e8f7}
-.paper-document-copy{position:absolute;inset:20% 12% 17%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;translate:0 8px;transition:opacity 350ms,translate 450ms}
+.paper-document-copy{position:absolute;inset:0;text-align:center;opacity:0;translate:0 8px;transition:opacity 350ms,translate 450ms}
 .paper-dialog.is-ready .paper-document-copy{opacity:1;translate:0 0}
-.paper-document-kicker{font-size:9px;font-weight:600;letter-spacing:2px;line-height:1.6;color:#857886;margin:0 0 18px}
-.paper-document-copy h2{font:500 clamp(26px,4.5vw,43px)/1.12 Fredoka,sans-serif;letter-spacing:-.8px;margin:0;color:#4d3f57}
-.paper-document-rule{width:34px;height:1px;background:#af98b6;margin:24px 0 20px}
-.paper-document-copy>p:not(.paper-document-kicker){font-size:13px;line-height:1.8;color:#776b7a;margin:0 0 27px}
-.paper-document-link{display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:14px 16px;border:1px solid #a690ae;border-radius:12px;background:#fffafdc7;color:#5e466b;font-size:12px;font-weight:600;line-height:1.4}
-.paper-document-link:hover{background:#f3eaf7}.paper-document-link span{font-size:17px}
-.paper-document-copy small{font-size:9px;line-height:1.6;color:#8f8193;margin-top:15px}
+.paper-print-defs{position:absolute;width:0;height:0;pointer-events:none}
+.paper-printed-content{position:absolute;inset:0;filter:url(#paper-print-creases);mix-blend-mode:multiply;pointer-events:none}
+.paper-iais-logo{position:absolute;left:18%;top:14%;display:block;width:64%;height:auto;margin:0}
+.paper-document-copy h2{position:absolute;left:8%;right:8%;top:35%;margin:0;color:#304651;font-family:'DM Sans',Arial,sans-serif;letter-spacing:-.015em;line-height:1.4;font-weight:500}
+.paper-main-title{display:block;white-space:nowrap;font-size:5.3cqw;font-weight:600}
+.paper-title-and{display:block;font-size:3.8cqw;font-weight:400;margin:2.8cqw 0 4.2cqw}
+.paper-framework-title{display:block;font-size:4.2cqw;line-height:1.65;font-weight:500}
+.paper-document-link{position:absolute;bottom:13%;left:50%;translate:-50% 0;display:inline-flex;align-items:center;justify-content:center;gap:2.8cqw;min-height:44px;max-width:84%;padding:clamp(10px,2.8cqw,14px) clamp(12px,3.2cqw,16px);border:1px solid #7797a6;border-radius:10px;background:transparent;color:#166b8f;font-size:clamp(10px,2.4cqw,12px);font-weight:600;line-height:1.4;white-space:nowrap;pointer-events:auto}
+.paper-document-link:hover{background:#dceff65e}.paper-document-link span{font-size:1.35em}
 @keyframes paper-backdrop-in{from{background:#63516c00;backdrop-filter:blur(0)}to{background:#63516c2b;backdrop-filter:blur(5px)}}
 @keyframes paper-backdrop-out{from{background:#63516c2b;backdrop-filter:blur(5px)}to{background:#63516c00;backdrop-filter:blur(0)}}
-@media(max-width:650px){.paper-document-copy{inset:17% 10% 15%}.paper-document-kicker{font-size:8px;letter-spacing:1.4px;margin-bottom:13px}.paper-document-rule{margin:16px 0}.paper-document-copy>p:not(.paper-document-kicker){font-size:11px;margin-bottom:20px}.paper-document-link{font-size:10px;padding:12px 13px;gap:10px}.paper-document-copy small{font-size:8px;margin-top:12px}}
-@media(max-height:600px){.paper-dialog{width:min(420px,calc(100vw - 90px),calc(80svh * .85))}.paper-sheet{aspect-ratio:.85}.paper-document-copy{inset:13% 9% 12%}.paper-document-copy h2{font-size:24px}.paper-document-kicker{font-size:7px;margin-bottom:10px}.paper-document-rule{margin:12px 0}.paper-document-copy>p:not(.paper-document-kicker){font-size:10px;margin-bottom:13px}.paper-document-link{padding:10px;font-size:10px}.paper-document-copy small{font-size:7px;margin-top:9px}.paper-close{top:-39px;width:32px;height:32px}}
+@media(max-height:600px){.paper-dialog{width:min(420px,calc(100vw - 90px),calc(80svh * .85))}.paper-sheet{aspect-ratio:.85}.paper-iais-logo{top:11%}.paper-document-copy h2{top:31%}.paper-document-link{bottom:10%}.paper-close{top:-39px;width:32px;height:32px}}
 @media(prefers-reduced-motion:reduce){.paper-dialog::backdrop,.paper-dialog.is-closing::backdrop{animation:none}.paper-document-copy,.paper-trigger::after{transition:none}.title .hero-paper-new,.title .hero-paper-original{animation:none}}
 
 /* Align each generated transparent frame to the paper interaction box. */
