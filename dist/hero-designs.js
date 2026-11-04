@@ -1,7 +1,7 @@
 (() => {
   const key='icp-hero-art-version';
   let selected='new';
-  try { const saved=localStorage.getItem(key);if(['new','original'].includes(saved))selected=saved; } catch {}
+  try { const saved=localStorage.getItem(key);if(['new','original','sculpture'].includes(saved))selected=saved; } catch {}
   document.documentElement.dataset.heroArt=selected;
   function init(){
     const toggle=document.querySelector('#hero-dev-toggle');
@@ -13,6 +13,8 @@
       radios.forEach(radio=>{radio.checked=radio.value===selected});
       document.querySelector('.hero-original').setAttribute('aria-hidden',String(selected!=='original'));
       document.querySelector('.hero-new').setAttribute('aria-hidden',String(selected!=='new'));
+      document.querySelector('.hero-sculpture').setAttribute('aria-hidden',String(selected!=='sculpture'));
+      document.dispatchEvent(new Event('hero-art-change'));
     }
     sync();
     function open(value,restoreFocus=false){panel.hidden=!value;toggle.setAttribute('aria-expanded',String(value));if(value)radios.find(r=>r.checked).focus();else if(restoreFocus)toggle.focus()}

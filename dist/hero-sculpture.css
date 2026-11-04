@@ -1,0 +1,25 @@
+.title .hero-sculpture{position:relative;display:none;width:100%;aspect-ratio:1707/921;isolation:isolate}
+html[data-hero-art="sculpture"] .title .hero-sculpture{display:block}
+html[data-hero-art="sculpture"] .title .hero-new-art,html[data-hero-art="sculpture"] .title .hero-original{display:none}
+.sculpture-piece{position:absolute;display:block;transform-origin:50% 95%;animation:sculpture-rise 1000ms both}
+.sculpture-i{left:7.5%;top:47%;width:15.5%;height:49%;z-index:2;animation-delay:0ms}
+.sculpture-c{left:23.8%;top:23%;width:33.5%;height:73%;z-index:1;animation-delay:65ms}
+.sculpture-p{left:59%;top:21%;width:35.5%;height:75%;z-index:2;animation-delay:120ms}
+.sculpture-paper{left:6%;top:7%;width:18.5%;height:34%;z-index:3;transform-origin:50% 50%;animation:sculpture-paper-land 650ms 850ms both}
+.sculpture-sway{position:absolute;inset:0;display:block;transform-origin:50% 85%;translate:var(--balloon-x,0px) var(--balloon-y,0px);rotate:var(--balloon-rotation,0deg);transition:translate 650ms cubic-bezier(.2,.9,.3,1.15),rotate 750ms cubic-bezier(.2,.9,.3,1.15)}
+.title .hero-sculpture .sculpture-sway img{position:absolute;display:block;width:var(--asset-width,100%);height:var(--asset-height,100%);left:var(--asset-left,0%);top:var(--asset-top,0%);margin:0;transform:none;filter:drop-shadow(0 6px 5px #70548a12);pointer-events:none}
+.sculpture-paper .sculpture-sway{transform-origin:50% 50%;transition:rotate 450ms cubic-bezier(.2,.8,.3,1.2)}
+.title .hero-sculpture .sculpture-accent{position:absolute;inset:0;display:block;width:100%;height:100%;margin:0;transform:none;pointer-events:none}
+.accent-gold{clip-path:inset(0 59% 75% 26%)}.accent-blue{clip-path:inset(3% 3% 79% 87%)}.accent-pink{clip-path:inset(69% 92.8% 21% 1%)}.accent-purple{clip-path:inset(73% 3% 4% 82%)}
+@media(hover:hover) and (pointer:fine){html[data-paper-tilt="true"] .sculpture-paper:hover .sculpture-sway{rotate:3deg}}
+@keyframes sculpture-rise{0%{opacity:0;transform:translateY(35px) scale(.94,1.03)}25%{opacity:1}50%{transform:translateY(-13px) scale(.99,1.025)}73%{transform:translateY(4px) scale(1.02,.98)}88%{transform:translateY(-3px)}100%{opacity:1;transform:none}}
+@keyframes sculpture-paper-land{0%{opacity:0;transform:translateY(-35px) rotate(-13deg)}20%{opacity:1}65%{transform:translateY(4px) rotate(4deg)}83%{transform:translateY(-3px) rotate(-1deg)}100%{opacity:1;transform:none}}
+@media(min-width:1500px){.title .hero-sculpture{width:108%;margin-left:-4%}}
+@media(prefers-reduced-motion:reduce){.sculpture-piece{animation:none}.sculpture-sway{translate:none!important;rotate:none!important;transition:none}}
+
+/* Map transparent source padding to each object box without cropping the assets. */
+.sculpture-i{--asset-width:228.83212%;--asset-height:114.41606%;--asset-left:-63.68613%;--asset-top:-8.48540%}
+.sculpture-c{--asset-width:139.79933%;--asset-height:126.41129%;--asset-left:-18.06020%;--asset-top:-13.30645%}
+.sculpture-p{--asset-width:127.30964%;--asset-height:115.89649%;--asset-left:-13.70558%;--asset-top:-9.61183%}
+.sculpture-paper{--asset-width:127.95918%;--asset-height:125.65130%;--asset-left:-14.38776%;--asset-top:-13.02605%}
+.sculpture-i{width:13.2%}.sculpture-c{left:22.5%;width:35.6%}.sculpture-p{left:59.5%;width:36.85%}.sculpture-paper{left:5.1%;width:18%}
