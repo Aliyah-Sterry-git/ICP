@@ -1,0 +1,3 @@
+/* Let the existing idle bob continue while the number follows the pointer. */
+.module-link .number-artwork{transform-origin:50% 85%;translate:var(--number-sway-x,0px) var(--number-sway-y,0px);rotate:var(--number-sway-rotation,0deg);transition:translate 900ms cubic-bezier(.18,.8,.25,1.12),rotate 1100ms cubic-bezier(.18,.8,.25,1.12)}
+@media(prefers-reduced-motion:reduce){.module-link .number-artwork{translate:none;rotate:none;transition:none}.module-link .number-wrap{animation:none}}
