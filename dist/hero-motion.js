@@ -58,7 +58,7 @@
         const x = Math.max(-1, Math.min(1, (event.clientX - bounds.left) / bounds.width * 2 - 1));
         const y = Math.max(-1, Math.min(1, (event.clientY - bounds.top) / bounds.height * 2 - 1));
         layers.forEach((layer, index) => {
-          const weight = [7, 4, 5.5][index];
+          const weight = [10, 6, 8][index];
           let letterX = x, letterY = y;
           if (separate) {
             const piece = layer.parentElement.getBoundingClientRect();
@@ -71,7 +71,7 @@
           }
           layer.style.setProperty('--balloon-x', `${letterX * weight}px`);
           layer.style.setProperty('--balloon-y', `${letterY * weight * .8}px`);
-          layer.style.setProperty('--balloon-rotation', `${letterX * [1.2, -.65, .85][index]}deg`);
+          layer.style.setProperty('--balloon-rotation', `${letterX * [1.7, -.95, 1.2][index]}deg`);
         });
       });
       art.addEventListener('pointerleave', reset);
