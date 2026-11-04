@@ -1,6 +1,4 @@
-.title .hero-sculpture{position:relative;display:none;width:100%;aspect-ratio:1707/921;isolation:isolate}
-html[data-hero-art="sculpture"] .title .hero-sculpture{display:block}
-html[data-hero-art="sculpture"] .title .hero-new-art,html[data-hero-art="sculpture"] .title .hero-original{display:none}
+.title .hero-sculpture{position:relative;display:block;width:100%;aspect-ratio:1707/921;isolation:isolate}
 .sculpture-piece{position:absolute;display:block;transform-origin:50% 95%;animation:sculpture-rise 1000ms both}
 .sculpture-i{left:7.5%;top:47%;width:15.5%;height:49%;z-index:2;animation-delay:0ms}
 .sculpture-c{left:23.8%;top:23%;width:33.5%;height:73%;z-index:1;animation-delay:65ms}

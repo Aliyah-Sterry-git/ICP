@@ -2,7 +2,7 @@
 
 Created with the built-in image generation tool, using `dist/assets/icp-hero-new.png` as the reference. The previous artwork is retained. Each generated PNG has its own transparent alpha channel and complete object contour.
 
-Select **Developer → Separate balloon assets**, then enable **Balloon letters** and **Paper tilt** to preview.
+The homepage uses these separate balloon assets by default, with independent letter movement and the interactive paper gateway.
 
 ## i
 

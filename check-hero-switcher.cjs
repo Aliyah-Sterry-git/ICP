@@ -1,3 +1,20 @@
-const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');const source=fs.readFileSync(__dirname+'/dist/hero-designs.js','utf8');
-function boot(saved){let focused='';const node=name=>({events:{},addEventListener(type,fn){this.events[type]=fn},setAttribute(key,value){this[key]=value},focus(){focused=name}});const toggle=node('toggle'),panel=Object.assign(node('panel'),{hidden:true}),close=node('close'),original=node('original'),newImage=node('new'),sculpture=node('sculpture');const radios=['new','original','sculpture'].map(value=>Object.assign(node(value),{value,checked:false}));panel.querySelectorAll=()=>radios;panel.querySelector=()=>close;const handlers={};const document={readyState:'complete',documentElement:{dataset:{}},querySelector:selector=>({'#hero-dev-toggle':toggle,'#hero-dev-panel':panel,'.hero-original':original,'.hero-new':newImage,'.hero-sculpture':sculpture}[selector]),addEventListener(type,fn){handlers[type]=fn},dispatchEvent(){}};const storage={value:saved,getItem(){return this.value},setItem(key,value){this.value=value}};vm.runInNewContext(source,{document,localStorage:storage,Event:class Event{}});return{document,toggle,panel,radios,storage,handlers,original,newImage,focused:()=>focused}}
-const state=boot(null);assert.equal(state.document.documentElement.dataset.heroArt,'new');assert.equal(state.original['aria-hidden'],'true');state.toggle.events.click();assert.equal(state.panel.hidden,false);state.radios[1].checked=true;state.radios[1].events.change();assert.equal(state.storage.value,'original');assert.equal(state.document.documentElement.dataset.heroArt,'original');assert.equal(state.newImage['aria-hidden'],'true');state.handlers.keydown({key:'Escape'});assert.equal(state.panel.hidden,true);assert.equal(state.focused(),'toggle');assert.equal(boot('original').document.documentElement.dataset.heroArt,'original');assert.equal(boot('invalid').document.documentElement.dataset.heroArt,'new');assert.equal(boot('sculpture').document.documentElement.dataset.heroArt,'sculpture');console.log('Passed: new default, both artwork states, saved selection, restore, accessibility state and Escape close.');
+﻿const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const html=fs.readFileSync(__dirname+'/dist/index.html','utf8');
+assert(html.includes('data-hero-art="sculpture"'));
+assert(!/hero-dev-|hero-design-lab|hero-original|hero-new-art/.test(html));
+assert(html.includes('class="hero-sculpture" role="group"'));
+assert(html.includes('aria-hidden="false"'));
+const source=fs.readFileSync(__dirname+'/dist/hero-motion.js','utf8');
+const reduced={matches:false,addEventListener(type,fn){this.change=fn}},fine={matches:true,addEventListener(type,fn){this.change=fn}};
+const layers=[91,223,576].map((left,index)=>({values:new Map(),style:{setProperty(k,v){layers[index].values.set(k,v)},removeProperty(k){layers[index].values.delete(k)}},parentElement:{getBoundingClientRect(){return{left,top:120,width:140+index*100,height:300}}}}));
+const events={};const art={querySelectorAll(){return layers},getBoundingClientRect(){return{left:0,top:0,width:1000,height:540}},addEventListener(type,fn){events[type]=fn}};
+const document={documentElement:{dataset:{}},querySelector(){return art},addEventListener(){}};
+vm.runInNewContext(source,{document,window:{addEventListener(){}},matchMedia:q=>q.includes('reduced')?reduced:fine});
+assert.equal(document.documentElement.dataset.balloonLetters,'true');
+events.pointermove({pointerType:'mouse',clientX:450,clientY:250});
+assert.equal(new Set(layers.map(l=>l.values.get('--balloon-x'))).size,3);
+events.pointerleave();assert(layers.every(l=>l.values.size===0));
+events.pointermove({pointerType:'touch',clientX:400,clientY:200});assert(layers.every(l=>l.values.size===0));
+reduced.matches=true;reduced.change();assert.equal(document.documentElement.dataset.balloonLetters,'false');
+reduced.matches=false;fine.matches=false;fine.change();assert.equal(document.documentElement.dataset.balloonLetters,'false');
+console.log('Passed: permanent separate artwork, no developer controls, motion on by default, independent letter response, reset, touch and reduced-motion support.');

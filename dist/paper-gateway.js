@@ -10,15 +10,6 @@
   let active = null, flight = null, closing = false, suppressFocus = false;
 
   const triggers = [originalTrigger];
-  for (const [selector, className] of [['.hero-new-art', 'hero-paper-new'], ['.hero-original', 'hero-paper-original']]) {
-    const art = document.querySelector(selector);
-    if (!art) continue;
-    const button = originalTrigger.cloneNode(true);
-    button.className = `paper-trigger ${className}`;
-    art.append(button);
-    triggers.push(button);
-  }
-  document.documentElement.classList.add('paper-gateway-ready');
 
   function context(visual, button = null) {
     return { visual, button, frames: [...visual.querySelectorAll('.paper-frame')], progress: 0, raf: null, settle: null, returning: false };
