@@ -8,7 +8,6 @@ html[data-design="professional"] .principles-gallery .brand{font-family:Fredoka,
 html[data-design="professional"] .principles-gallery .brand-word span:first-child{color:#b96f82}
 html[data-design="professional"] .principles-gallery .brand-word span:nth-child(2){color:#b39555}
 html[data-design="professional"] .principles-gallery .brand-word span:nth-child(3){color:#628798}
-html[data-design="professional"] .principles-gallery .brand small{font-family:Georgia,'Times New Roman',serif;letter-spacing:1.8px;font-size:10px;line-height:1.6;color:#302921;border-color:#ceb18d;font-weight:600;padding-left:15px}
 html[data-design="professional"] .principles-gallery .navbar nav{gap:28px}
 html[data-design="professional"] .principles-gallery .navbar nav>a{font-family:'Times New Roman',Georgia,serif;font-size:16px}
 html[data-design="professional"] .principles-gallery .profile-button{width:32px;height:32px}
