@@ -13,7 +13,7 @@
     });
   }
   function sync() {
-    root.dataset.balloonLetters = String(!reducedMotion.matches && finePointer.matches);
+    root.dataset.balloonLetters = String(root.dataset.design !== 'professional' && !reducedMotion.matches && finePointer.matches);
     reset();
   }
   art.addEventListener('pointermove', event => {
@@ -36,6 +36,7 @@
   art.addEventListener('pointerleave', reset);
   art.addEventListener('pointercancel', reset);
   window.addEventListener('blur', reset);
+  document.addEventListener('hero-art-change', sync);
   document.addEventListener('visibilitychange', () => { if (document.hidden) reset(); });
   reducedMotion.addEventListener('change', sync);
   finePointer.addEventListener('change', sync);

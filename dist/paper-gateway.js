@@ -9,7 +9,7 @@
   const frameStops = [0, .25, .58, 1];
   let active = null, flight = null, closing = false, suppressFocus = false;
 
-  const triggers = [originalTrigger];
+  const triggers = [...document.querySelectorAll('.paper-trigger')];
 
   function context(visual, button = null) {
     return { visual, button, frames: [...visual.querySelectorAll('.paper-frame')], progress: 0, raf: null, settle: null, returning: false };

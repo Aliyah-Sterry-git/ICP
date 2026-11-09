@@ -1,7 +1,9 @@
 ﻿const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const html=fs.readFileSync(__dirname+'/dist/index.html','utf8');
 assert(html.includes('data-hero-art="sculpture"'));
-assert(!/hero-dev-|hero-design-lab|hero-original|hero-new-art/.test(html));
+assert(html.includes('data-design="professional"'));
+assert(html.includes('class="library-hero"'));
+assert(html.includes('id="design-toggle"'));
 assert(html.includes('class="hero-sculpture" role="group"'));
 assert(html.includes('aria-hidden="false"'));
 const source=fs.readFileSync(__dirname+'/dist/hero-motion.js','utf8');
@@ -17,4 +19,4 @@ events.pointerleave();assert(layers.every(l=>l.values.size===0));
 events.pointermove({pointerType:'touch',clientX:400,clientY:200});assert(layers.every(l=>l.values.size===0));
 reduced.matches=true;reduced.change();assert.equal(document.documentElement.dataset.balloonLetters,'false');
 reduced.matches=false;fine.matches=false;fine.change();assert.equal(document.documentElement.dataset.balloonLetters,'false');
-console.log('Passed: permanent separate artwork, no developer controls, motion on by default, independent letter response, reset, touch and reduced-motion support.');
+console.log('Passed: professional default, archived separate artwork, developer design selector, balloon motion, independent letter response, reset, touch and reduced-motion support.');
