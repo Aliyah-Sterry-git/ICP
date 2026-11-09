@@ -46,3 +46,25 @@ html[data-design="professional"] :is(a,button,input):focus-visible{outline-color
 @media(prefers-reduced-motion:reduce){.title .library-paper{animation:none}}
 
 .design-snapshot{display:inline-block;margin-top:17px;color:#98785e;font:10px/1.5 "DM Sans",sans-serif;text-decoration:underline;text-underline-offset:4px}
+
+/* Shared brand and PIN-gated design previews. */
+.brand .brand-logo{display:block;width:132px;height:auto;margin:0;filter:none;transform:none;object-fit:contain}
+.design-options[hidden],.design-pin-form[hidden],.design-pin-error[hidden]{display:none}
+.design-options>p,.design-pin-form>p{font:11px/1.6 'DM Sans',sans-serif;color:#947866;margin:0 0 15px}
+.design-pin-form{display:grid;gap:11px}.design-pin-form label{font:600 12px/1.4 'DM Sans',sans-serif;color:#70513e}
+.design-pin-form input{width:100%;padding:13px 14px;border:1px solid #d8bda2;border-radius:10px;background:#fffaf3;color:#543e36;font:20px/1.2 'DM Sans',sans-serif;letter-spacing:10px}
+.design-pin-form input:focus{outline:2px solid #b8996c;outline-offset:2px}.design-pin-form .design-pin-error{color:#9a303a;margin:0;font-size:11px}
+.design-unlock{padding:12px 16px;border:1px solid #a77a48;border-radius:10px;background:#713039;color:#fff4e2;font:600 12px 'DM Sans',sans-serif}.design-unlock:hover{background:#833c44}
+.navy-swatches i:nth-child(1){background:#1d3549}.navy-swatches i:nth-child(2){background:#a5803f}.navy-swatches i:nth-child(3){background:#d0d2d2}
+html[data-design="professional"][data-colorway="navy"] .navbar nav>a{color:#243c52}
+html[data-design="professional"][data-colorway="navy"] .navbar nav>a[aria-current="page"]{color:#a47b35;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px;font-weight:400}
+html[data-design="professional"][data-colorway="navy"] .navbar .profile-button{background:#d0d2d2;color:#21394d;border:0;border-radius:50%;width:36px;height:36px;padding:5px}
+html[data-design="professional"][data-colorway="navy"] .navbar .profile-button .profile-line{fill:#21394d;stroke:none;width:23px;height:26px}
+html[data-design="professional"][data-colorway="navy"] .navbar .profile-button:hover{background:#bdc4c9}
+html[data-design="professional"][data-colorway="navy"] .subtitle,html[data-design="professional"][data-colorway="navy"] .subtitle .principles-line{color:#1d3549}
+html[data-design="professional"][data-colorway="navy"] .subtitle>span:last-child{color:#96713a}
+html[data-design="professional"][data-colorway="navy"] .hero-copy .cta{background:linear-gradient(160deg,#213a50,#142c40);color:#f4eee4;border-color:transparent;border-bottom-color:#c6a65d;box-shadow:0 2px 0 #bd9b5733}
+html[data-design="professional"][data-colorway="navy"] .hero-copy .cta span{color:#b9a070}
+html[data-design="professional"][data-colorway="navy"] .hero-copy .cta:hover{background:linear-gradient(160deg,#2b465e,#1a344a);box-shadow:0 3px 8px #1b304a24}
+@media(max-width:850px){.brand .brand-logo{width:104px}}
+@media(max-width:370px){.brand .brand-logo{width:80px}}
