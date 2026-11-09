@@ -1,0 +1,38 @@
+.engraved-number{display:none}
+html[data-design="professional"] body.principles-gallery{background:radial-gradient(ellipse at 46% 24%,#fffaf1b3,transparent 73%),linear-gradient(110deg,#f0e2cf,#f8efe2 48%,#eee0cd)}
+html[data-design="professional"] body.principles-gallery::before{opacity:.2}
+html[data-design="professional"] body.principles-gallery::after{display:none}
+html[data-design="professional"] .principles-gallery header{padding:19px 3.5% 0;max-width:1420px}
+html[data-design="professional"] .principles-gallery .navbar{min-height:61px;padding:9px 24px;border-radius:22px;border:1px solid #fffaf2c9;background:#fff8edb3;box-shadow:0 7px 12px #7f583824,0 1px 1px #ae8c6617}
+html[data-design="professional"] .principles-gallery .brand{font-family:Fredoka,'DM Sans',sans-serif;font-size:33px;font-weight:500;letter-spacing:-1.5px;gap:18px}
+html[data-design="professional"] .principles-gallery .brand-word span:first-child{color:#b96f82}
+html[data-design="professional"] .principles-gallery .brand-word span:nth-child(2){color:#b39555}
+html[data-design="professional"] .principles-gallery .brand-word span:nth-child(3){color:#628798}
+html[data-design="professional"] .principles-gallery .brand small{font-family:Georgia,'Times New Roman',serif;letter-spacing:2px;font-size:11px;line-height:1.6;color:#302921;border-color:#ceb18d;font-weight:600;padding-left:18px}
+html[data-design="professional"] .principles-gallery .navbar nav{gap:34px}
+html[data-design="professional"] .principles-gallery .navbar nav>a{font-family:'Times New Roman',Georgia,serif;font-size:17px}
+html[data-design="professional"] .principles-gallery .profile-button{width:36px;height:38px}
+html[data-design="professional"] .principles-gallery .profile-line{width:29px;height:32px;fill:#8e6568;stroke:none}
+html[data-design="professional"] .principles-gallery .module-main{max-width:1360px;padding:36px 5.1% 75px}
+html[data-design="professional"] .principles-gallery .number-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+html[data-design="professional"] .principles-gallery .module-link{min-height:194px;min-width:0;gap:0;padding:10px 9px 13px;border:1px solid #dcc8b37a;border-radius:18px;background:#fff8ef21;transition:background 350ms,box-shadow 350ms,border-color 350ms;box-shadow:inset 0 1px 0 #fff6e83b;isolation:isolate}
+html[data-design="professional"] .principles-gallery .module-link:hover{background:linear-gradient(145deg,#fffbf0b8,#edd8b6b3);border-color:#cba572;box-shadow:inset 0 0 0 1px #fffdf2,0 5px 9px #9061333d,0 0 0 1px #f9ead4;transform:none}
+html[data-design="professional"] .principles-gallery .number-wrap{display:block;width:100%;max-width:none;height:114px;animation:none!important;translate:none;rotate:none;transform:none}
+html[data-design="professional"] .principles-gallery .number-wrap::before{display:none;content:none}
+html[data-design="professional"] .principles-gallery .number-wrap .number-artwork{display:none!important}
+html[data-design="professional"] .principles-gallery .engraved-number{display:block;width:100%;height:100%;max-width:100%;object-fit:contain;filter:drop-shadow(0 2px 2px #50341424);pointer-events:none;user-select:none}
+html[data-design="professional"] .principles-gallery .module-name{position:relative;display:flex;align-items:flex-start;justify-content:center;min-height:30px;max-width:none;width:100%;padding:7px 0 0;margin:6px 0 0;font-family:'Times New Roman',Georgia,serif;font-size:20px;font-weight:400;line-height:1.1;letter-spacing:-.3px;color:#211b18;text-align:center}
+html[data-design="professional"] .principles-gallery .module-name::before{content:'';position:absolute;top:0;left:12%;right:12%;height:1px;background:#d6ae7880}
+html[data-design="professional"] .principles-gallery .module-lock{gap:7px;font-family:Georgia,'Times New Roman',serif;font-size:12px;font-weight:400;font-style:italic;line-height:1.6;color:#7c6c56;letter-spacing:0;margin-top:6px}
+html[data-design="professional"] .principles-gallery .module-lock svg{width:12px;height:12px;stroke-width:1.5}
+@media(max-width:1050px){html[data-design="professional"] .principles-gallery .number-grid{grid-template-columns:repeat(4,minmax(0,1fr))}html[data-design="professional"] .principles-gallery .module-main{padding-left:4%;padding-right:4%}}
+@media(max-width:800px){html[data-design="professional"] .principles-gallery .number-grid{grid-template-columns:repeat(3,minmax(0,1fr))}html[data-design="professional"] .principles-gallery .navbar nav{gap:20px}html[data-design="professional"] .principles-gallery .brand{gap:0}html[data-design="professional"] .principles-gallery .module-name{font-size:19px}}
+@media(max-width:600px){html[data-design="professional"] .principles-gallery header{padding:15px 4% 0}html[data-design="professional"] .principles-gallery .navbar{min-height:61px;padding:10px 15px;border-radius:21px}html[data-design="professional"] .principles-gallery .navbar nav{gap:16px}html[data-design="professional"] .principles-gallery .navbar nav>a{font-size:15px}html[data-design="professional"] .principles-gallery .brand{font-size:31px}html[data-design="professional"] .principles-gallery .profile-button{width:31px;height:34px}html[data-design="professional"] .principles-gallery .profile-line{width:25px;height:29px}html[data-design="professional"] .principles-gallery .module-main{padding:26px 5% 75px}html[data-design="professional"] .principles-gallery .number-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}html[data-design="professional"] .principles-gallery .module-link{min-height:191px;border-radius:16px;padding:10px 8px 12px}html[data-design="professional"] .principles-gallery .number-wrap{height:112px}html[data-design="professional"] .principles-gallery .module-name{font-size:17px;line-height:1.2;min-height:29px;padding-top:7px}html[data-design="professional"] .principles-gallery .module-lock{font-size:11px;gap:5px;margin-top:6px}}
+@media(max-width:350px){html[data-design="professional"] .principles-gallery .navbar nav{gap:10px}html[data-design="professional"] .principles-gallery .navbar nav>a{font-size:14px}html[data-design="professional"] .principles-gallery .module-main{padding-left:4%;padding-right:4%}html[data-design="professional"] .principles-gallery .number-grid{gap:10px}html[data-design="professional"] .principles-gallery .module-name{font-size:15px}html[data-design="professional"] .principles-gallery .module-lock{font-size:10px}html[data-design="professional"] .principles-gallery .number-wrap{height:102px}}
+@media(prefers-reduced-motion:reduce){html[data-design="professional"] .principles-gallery .module-link{transition:none}}
+
+html[data-design="professional"] .principles-gallery .engraved-number.two-numerals{height:98px;margin:8px 0}
+@media(max-width:600px){html[data-design="professional"] .principles-gallery .engraved-number.two-numerals{height:96px}}
+@media(max-width:350px){html[data-design="professional"] .principles-gallery .engraved-number.two-numerals{height:86px}}
+
+html[data-design="professional"] .principles-gallery .design-toggle{font-size:0;gap:0;width:36px;height:36px;padding:10px;border-radius:50%}

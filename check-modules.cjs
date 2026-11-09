@@ -9,6 +9,9 @@ assert.deepEqual(rows.map(r=>r[0]),expected);
 const index=fs.readFileSync(path.join(root,'modules.html'),'utf8');
 assert.equal((index.match(/class="module-link"/g)||[]).length,25);
 assert(!index.includes('href="principles/11.html"'));
+const engravings=require('./number-engraving-manifest.json');
+assert.deepEqual(Object.keys(engravings).map(Number),expected);
+for(const n of expected)assert(index.includes('src="assets/library-number-'+n+'-v1.webp"'),'Missing matching engraved number '+n);
 if(!unlocked){
   assert.equal((index.match(/aria-disabled="true"/g)||[]).length,25);
   assert(!/<a class="module-link"/.test(index));
