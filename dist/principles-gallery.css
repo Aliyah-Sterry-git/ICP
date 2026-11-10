@@ -1,6 +1,6 @@
 .engraved-number{display:none}
-html[data-design="professional"] body.principles-gallery{background:radial-gradient(ellipse at 46% 24%,#fffaf1b3,transparent 73%),linear-gradient(110deg,#f0e2cf,#f8efe2 48%,#eee0cd)}
-html[data-design="professional"] body.principles-gallery::before{opacity:.2}
+html[data-design="professional"] body.principles-gallery{background:radial-gradient(ellipse at 46% 24%,#ffffffb3,transparent 73%),linear-gradient(110deg,#f8f5ef,#fdfbf7 48%,#f7f4ee)}
+html[data-design="professional"] body.principles-gallery::before{opacity:.1}
 html[data-design="professional"] body.principles-gallery::after{display:none}
 html[data-design="professional"] .principles-gallery header{padding:19px 3.5% 0;max-width:1420px}
 html[data-design="professional"] .principles-gallery .navbar{min-height:56px;padding:8px 21px;border-radius:22px;border:1px solid #fffaf2c9;background:#fff8edb3;box-shadow:0 7px 12px #7f583824,0 1px 1px #ae8c6617}
