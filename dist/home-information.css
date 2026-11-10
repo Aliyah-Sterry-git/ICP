@@ -19,8 +19,14 @@ html[data-colorway="navy"] .home-information{--info-accent:#96713a}
 .learning-points li>span{display:grid;place-items:center;flex:0 0 34px;height:34px;border:1px solid #dfd7cb;border-radius:50%;color:var(--info-accent);font:14px Georgia,serif}
 .home-information .learning-points h3{font-size:18px;margin-bottom:3px}
 .home-information .learning-points p{font-size:12px;line-height:1.7;margin:0}
-.home-information .learning-note{font-size:11px;line-height:1.7;max-width:410px;margin:19px 0 0;color:#7c8087}
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 html[data-design="balloon"] .home-information{display:none}
 @media(min-width:851px){html[data-design="professional"] .hero{min-height:calc(100svh - 180px)}}
 @media(max-width:850px){.home-information{margin-top:20px;padding:0 10px}.home-explainer{gap:28px;padding:50px 0;grid-template-columns:1fr}.explainer-art{max-width:390px;margin:auto;width:100%}.learning-explainer .explainer-art{grid-row:1}.home-information h2{font-size:31px}.explainer-copy{max-width:560px;margin:auto}.home-information p{font-size:13px}}
+
+.paper-hint{display:flex;align-items:flex-start;gap:9px;max-width:305px;margin:20px 0 0;padding:0;border:0;background:none;color:#72716e;text-align:left;font:12px/1.65 'DM Sans',sans-serif;cursor:pointer}
+.paper-hint em{font-family:Georgia,serif;color:#713039;font-size:15px}
+.paper-hint-mark{font:25px/1 Georgia,serif;color:#a08760;transform:rotate(-12deg)}
+.paper-hint:hover{color:#203449}.paper-hint:hover em{text-decoration:underline;text-underline-offset:3px}
+html[data-colorway="navy"] .paper-hint em{color:#96713a}
+html[data-design="balloon"] .paper-hint{display:none}
