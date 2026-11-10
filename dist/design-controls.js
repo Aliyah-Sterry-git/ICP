@@ -12,7 +12,17 @@
   const script = document.querySelector('script[src$="design-controls.js"]');
   if (archive && script) archive.href = new URL('balloon-archive.html', script.src).href;
   const radios = [...panel.querySelectorAll('input[name="design-direction"]')];
+  const navbarRadios = [...panel.querySelectorAll('input[name="navbar-style"]')];
+  const syncNavbar = () => navbarRadios.forEach(radio => { radio.checked = radio.value === (root.dataset.navstyle || 'original'); });
+  navbarRadios.forEach(radio => radio.addEventListener('change', () => {
+    if (!unlocked) { syncNavbar(); return; }
+    if (!radio.checked) return;
+    root.dataset.navstyle = radio.value;
+    try { localStorage.setItem('icp-navbar-style', radio.value); } catch {}
+    syncNavbar();
+  }));
   function sync() {
+    syncNavbar();
     const design = root.dataset.design === 'balloon' ? 'balloon' : 'professional';
     const selected = design === 'balloon' ? 'balloon' : root.dataset.colorway === 'navy' ? 'navy' : 'professional';
     root.dataset.design = design;
@@ -76,6 +86,7 @@
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !panel.hidden) open(false, true); });
   document.addEventListener('click', event => { if (!panel.hidden && !event.target.closest('.design-lab')) open(false); });
   window.addEventListener('storage', event => {
+    if (event.key === 'icp-navbar-style') { root.dataset.navstyle = ['soft-white','dark-navy'].includes(event.newValue) ? event.newValue : 'original'; syncNavbar(); return; }
     if (event.key !== 'icp-design-direction') return;
     root.dataset.design = event.newValue === 'balloon' ? 'balloon' : 'professional';
     root.dataset.colorway = event.newValue === 'navy' ? 'navy' : 'original';

@@ -73,3 +73,15 @@ html[data-design="professional"][data-colorway="navy"] .hero-copy .cta:hover{bac
 html[data-design="professional"] .navbar .profile-button{width:32px;height:32px;padding:4px;border:0;border-radius:50%;background:#ded2d2;color:#78383b}
 html[data-design="professional"] .navbar .profile-button .profile-line{width:21px;height:24px;fill:currentColor;stroke:none}
 html[data-design="professional"] .navbar .profile-button:hover{background:#d3bfc0}
+
+.navbar-previews{margin-top:20px!important;padding-top:16px!important;border-top:1px solid #e6d5c2!important}
+.navbar-preview-label{margin:0 0 2px;font:600 13px Georgia,serif;color:#543e36}
+html[data-design="professional"][data-navstyle="soft-white"] body .navbar{background:#ffffffed;border:1px solid #e6e3dc;border-radius:17px;box-shadow:0 4px 16px #27324308}
+html[data-design="professional"][data-navstyle="dark-navy"] body .navbar{background:#1d3549;border:1px solid #30495d;border-radius:17px;box-shadow:0 4px 16px #152c4014}
+html[data-design="professional"][data-navstyle="dark-navy"] body .navbar nav>a{color:#f4eee4;font-weight:400}
+html[data-design="professional"][data-navstyle="dark-navy"] body .navbar nav>a[aria-current="page"]{color:#d7b77b;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px}
+html[data-design="professional"][data-navstyle="dark-navy"] body .navbar .brand small{color:#f4eee4;border-color:#a99065}
+html[data-design="professional"][data-navstyle="dark-navy"] body .navbar .brand-logo{filter:brightness(0) invert(1)}
+html[data-design="professional"][data-navstyle="dark-navy"] body .navbar .profile-button{background:#e4e7e7;color:#21394d}
+html[data-design="professional"][data-navstyle="dark-navy"] body .navbar .profile-line{fill:currentColor}
+html[data-design="professional"][data-navstyle="dark-navy"] body .navbar .profile-button:hover{background:#fffaf0}
